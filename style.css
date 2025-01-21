@@ -125,7 +125,7 @@ button {
 }
 
 .hero-image {
-  width: calc(100% - 40%);
+  width: calc(100% - 60%);
   display: flex;
   align-items: center;
   justify-content: center;
