@@ -225,7 +225,7 @@ button {
 }
 .bg {
   position: absolute;
-  z-index: -1;
+  z-index: -100;
 }
 
 .arrow {
@@ -256,6 +256,76 @@ button {
   color: white;
   background-color: orange;
   cursor: pointer;
+}
+
+.about-cards {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 400px repeat(2, 1fr);
+  gap: 16px;
+  padding: 16px;
+  width: 100%;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 16px;
+  position: relative;
+}
+
+.date {
+  position: absolute;
+  top: -17px;
+  left: 16px;
+  background-color: #00c2ff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card .title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 8px 0 0;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.grid-container .card:nth-child(1) {
+  grid-row: span 2;
+}
+
+.grid-container .card:nth-child(1) .card-content .description {
+  margin-top: 20px;
+  padding: 20px;
 }
 
 @media screen and (max-width: 576px) {
@@ -319,5 +389,11 @@ button {
   }
   .arrow {
     display: none;
+  }
+  .grid-container .card:nth-child(1) {
+    display: none;
+  }
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
